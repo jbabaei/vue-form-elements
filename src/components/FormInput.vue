@@ -1,6 +1,6 @@
 <template>
   <div class="form-group">
-    <required-asterisk /><label v-uni-for="name">{{label}}</label>
+    <required-asterisk /><label v-uni-for="name">{{ $t(label) }}</label>
     <input
       v-bind="$attrs"
       v-uni-id="name"
