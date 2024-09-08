@@ -11,10 +11,10 @@ jobs:
       - name: node
         uses: actions/setup-node@v2
         with:
-          node-versions: 12
+          node-versions: 16
           registry-url: https://registry.npmjs.org
       - name: publish
         run: npm publish --access public
         working-directory: .
         env:
-          NODE_AUTH_TOKEN: {{secrets.VUE_FORM_ELEMENT}}
+          NODE_AUTH_TOKEN: ${{secrets.VUE_FORM_ELEMENT}}
