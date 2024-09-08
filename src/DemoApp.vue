@@ -143,6 +143,12 @@
       helper="Example 7 minutes (PT7M)"
       validation="required"
     />
+
+    <form-grid
+      label="Sample Html Editor"
+      :content="data.sampleHtmlText"
+      @input="data.sampleHtmlText = $event">
+    </form-grid>
   </div>
 </template>
 

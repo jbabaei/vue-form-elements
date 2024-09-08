@@ -9,6 +9,7 @@ import FormDatePicker from "./FormDatePicker.vue";
 import FormAccordion from "./FormAccordion.vue";
 import FormHtmlEditor from "./FormHtmlEditor.vue";
 import FormHtmlViewer from "./FormHtmlViewer.vue";
+import FormGrid from "./FormGrid.vue";
 import FormDelayTimeControl from "./FormDelayTimeControl.vue";
 import FormMultiSelect from "./FormMultiSelect.vue";
 import FormPlainMultiSelect from "./FormPlainMultiSelect.vue";
@@ -35,6 +36,7 @@ const components = {
   FormAccordion,
   FormHtmlEditor,
   FormHtmlViewer,
+  FormGrid,
   FormDelayTimeControl,
   FormMultiSelect,
   FormPlainMultiSelect,
@@ -80,6 +82,7 @@ export {
   FormAccordion,
   FormHtmlEditor,
   FormHtmlViewer,
+  FormGrid,
   FormDelayTimeControl,
   FormMultiSelect,
   FormPlainMultiSelect,
