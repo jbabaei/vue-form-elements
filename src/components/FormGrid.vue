@@ -162,7 +162,7 @@
           // console.log('Prop changed: ', newVal, ' | was: ', oldVal)
 
           var ddd=new DataTable('#grid-element', {
-                    data: eval(newVal).output,//eval(newVal), //JSON.parse(newVal),
+                    data: eval(newVal.output),//eval(newVal), //JSON.parse(newVal),
                     columns: eval(this.column),
                     responsive: true,
                     destroy:true,
@@ -173,7 +173,7 @@
           // console.log('Prop changed: ', newVal, ' | was: ', oldVal)
 
           var ddd=new DataTable('#grid-element', {
-                    data: eval(this.value).output, //this.value,//eval(this.content), //JSON.parse(this.value),
+                    data: eval(this.value.output), //this.value,//eval(this.content), //JSON.parse(this.value),
                     columns: eval(newVal),
                     responsive: true,
                     destroy:true,
