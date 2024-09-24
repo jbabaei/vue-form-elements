@@ -65190,7 +65190,7 @@ $.fn.DataTable = function(f) {
 $.each(DataTable, function(f, c) {
   $.fn.DataTable[f] = c;
 });
-const FormGrid_vue_vue_type_style_index_0_scoped_9fb38a25_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
+const FormGrid_vue_vue_type_style_index_0_scoped_1a579eef_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
   components: {
     OptionboxView
   },
@@ -65291,7 +65291,7 @@ const FormGrid_vue_vue_type_style_index_0_scoped_9fb38a25_lang = "", FormGrid_vu
   watch: {
     value: function(newVal, oldVal) {
       console.log("Prop changed: ", newVal, " | was: ", oldVal), new DataTable("#grid-element", {
-        data: eval(newVal.output),
+        data: eval(newVal),
         //eval(newVal), //JSON.parse(newVal),
         columns: eval(this.column),
         responsive: !0,
@@ -65300,8 +65300,8 @@ const FormGrid_vue_vue_type_style_index_0_scoped_9fb38a25_lang = "", FormGrid_vu
       });
     },
     column: function(newVal, oldVal) {
-      console.log("Prop changed: ", newVal, " | was: ", oldVal), new DataTable("#grid-element", {
-        data: eval(this.value.output),
+      console.log("Column Prop changed: ", newVal, " | was: ", oldVal), console.log("+++ Value:", this.value), new DataTable("#grid-element", {
+        data: eval(this.value),
         //this.value,//eval(this.content), //JSON.parse(this.value),
         columns: eval(newVal),
         responsive: !0,
@@ -65322,7 +65322,7 @@ var _sfc_render$5 = function f() {
   _sfc_staticRenderFns$5,
   !1,
   null,
-  "9fb38a25",
+  "1a579eef",
   null,
   null
 );
