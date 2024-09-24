@@ -65296,9 +65296,9 @@ const qZ = Uc(), VZ = {
   watch: {
     value: function(c, l) {
       console.log("Prop changed: ", c, " | was: ", l), new Yt("#grid-element", {
-        data: c,
+        data: JSON.stringify(c),
         //eval(newVal), //JSON.parse(newVal),
-        columns: this.column,
+        columns: JSON.stringify(this.column),
         responsive: !0,
         destroy: !0,
         orderMulti: !0
@@ -65306,9 +65306,9 @@ const qZ = Uc(), VZ = {
     },
     column: function(c, l) {
       console.log("Column Prop changed: ", c, " | was: ", l), console.log("+++ Value:", this.value), new Yt("#grid-element", {
-        data: this.value,
+        data: JSON.stringify(this.value),
         //this.value,//eval(this.content), //JSON.parse(this.value),
-        columns: c,
+        columns: JSON.stringify(c),
         responsive: !0,
         destroy: !0,
         orderMulti: !0
@@ -65327,7 +65327,7 @@ var UZ = function() {
   WZ,
   !1,
   null,
-  "6bada268",
+  "37232b55",
   null,
   null
 );
