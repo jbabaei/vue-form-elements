@@ -65190,7 +65190,7 @@ $.fn.DataTable = function(f) {
 $.each(DataTable, function(f, c) {
   $.fn.DataTable[f] = c;
 });
-const FormGrid_vue_vue_type_style_index_0_scoped_737930e2_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
+const FormGrid_vue_vue_type_style_index_0_scoped_bf7a8aec_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
   components: {
     OptionboxView
   },
@@ -65290,7 +65290,8 @@ const FormGrid_vue_vue_type_style_index_0_scoped_737930e2_lang = "", FormGrid_vu
   },
   watch: {
     value: function(newVal, oldVal) {
-      console.log("Prop changed: ", newVal, " | was: ", oldVal), new DataTable("#grid-element", {
+      console.log("Prop changed: ", newVal, " | was: ", oldVal);
+      var ddd = new DataTable("#grid-element", {
         data: eval(newVal),
         //eval(newVal), //JSON.parse(newVal),
         columns: eval(this.column),
@@ -65298,9 +65299,11 @@ const FormGrid_vue_vue_type_style_index_0_scoped_737930e2_lang = "", FormGrid_vu
         destroy: !0,
         orderMulti: !0
       });
+      console.log("dataTable -----", ddd);
     },
     column: function(newVal, oldVal) {
-      console.log("Column Prop changed: ", newVal, " | was: ", oldVal), console.log("+++ Value:", this.value), new DataTable("#grid-element", {
+      console.log("Column Prop changed: ", newVal, " | was: ", oldVal), console.log("+++ Value:", this.value);
+      var ddd = new DataTable("#grid-element", {
         data: eval(this.value),
         //this.value,//eval(this.content), //JSON.parse(this.value),
         columns: eval(newVal),
@@ -65308,6 +65311,7 @@ const FormGrid_vue_vue_type_style_index_0_scoped_737930e2_lang = "", FormGrid_vu
         destroy: !0,
         orderMulti: !0
       });
+      console.log("dataTable -----", ddd);
     }
   }
 };
@@ -65322,7 +65326,7 @@ var _sfc_render$5 = function f() {
   _sfc_staticRenderFns$5,
   !1,
   null,
-  "737930e2",
+  "bf7a8aec",
   null,
   null
 );

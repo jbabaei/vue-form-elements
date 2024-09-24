@@ -168,6 +168,8 @@
                     destroy:true,
                     orderMulti:true
                 });
+
+          console.log("dataTable -----",ddd);
         },
         "column": function(newVal, oldVal) { // watch it
           console.log('Column Prop changed: ', newVal, ' | was: ', oldVal);
@@ -181,6 +183,8 @@
                     destroy:true,
                     orderMulti:true
                 });
+
+                console.log("dataTable -----",ddd);
         }
       }
   };
