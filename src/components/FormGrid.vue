@@ -159,7 +159,7 @@
     },
     watch: { 
         "value": function(newVal, oldVal) { // watch it
-          // console.log('Prop changed: ', newVal, ' | was: ', oldVal)
+          console.log('Prop changed: ', newVal, ' | was: ', oldVal)
 
           var ddd=new DataTable('#grid-element', {
                     data: eval(newVal.output),//eval(newVal), //JSON.parse(newVal),
@@ -170,7 +170,7 @@
                 });
         },
         "column": function(newVal, oldVal) { // watch it
-          // console.log('Prop changed: ', newVal, ' | was: ', oldVal)
+          console.log('Prop changed: ', newVal, ' | was: ', oldVal)
 
           var ddd=new DataTable('#grid-element', {
                     data: eval(this.value.output), //this.value,//eval(this.content), //JSON.parse(this.value),
