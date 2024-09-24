@@ -165,7 +165,7 @@
 
           var ddd=new DataTable('#grid-element', {
                     data: eval(newVal),//eval(newVal), //JSON.parse(newVal),
-                    columns: eval(this.column),
+                    //columns: eval(this.column),
                     responsive: true,
                     destroy:true,
                     orderMulti:true
@@ -180,7 +180,7 @@
 
           var ddd=new DataTable('#grid-element', {
                     data: eval(this.value), //this.value,//eval(this.content), //JSON.parse(this.value),
-                    columns: eval(newVal),
+                    //columns: eval(newVal),
                     responsive: true,
                     destroy:true,
                     orderMulti:true
