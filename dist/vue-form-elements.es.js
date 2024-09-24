@@ -65190,7 +65190,7 @@ $.fn.DataTable = function(f) {
 $.each(DataTable, function(f, c) {
   $.fn.DataTable[f] = c;
 });
-const FormGrid_vue_vue_type_style_index_0_scoped_24eeb62c_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
+const FormGrid_vue_vue_type_style_index_0_scoped_58d0ce60_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
   components: {
     OptionboxView
   },
@@ -65313,7 +65313,7 @@ const FormGrid_vue_vue_type_style_index_0_scoped_24eeb62c_lang = "", FormGrid_vu
 };
 var _sfc_render$5 = function f() {
   var c = this, h = c._self._c;
-  return h("div", { staticClass: "form-group" }, [h("label", { directives: [{ name: "uni-for", rawName: "v-uni-for", value: c.name, expression: "name" }], class: c.labelClass }, [c._v(c._s(c.label))]), h("div", { class: c.classList }, [h("div", { attrs: { id: c.uniqIdsMixin } })]), h("table", { staticClass: "display", attrs: { id: "grid-element" } }), c.validator && c.validator.errorCount || c.error ? h("div", { staticClass: "invalid-feedback" }, [c._l(c.validator.errors.get(this.name), function(x, E) {
+  return h("div", { staticClass: "form-group" }, [h("div", { class: c.classList }, [h("div", { attrs: { id: c.uniqIdsMixin } })]), h("table", { staticClass: "display", attrs: { id: "grid-element" } }), c.validator && c.validator.errorCount || c.error ? h("div", { staticClass: "invalid-feedback" }, [c._l(c.validator.errors.get(this.name), function(x, E) {
     return h("div", { key: E }, [c._v(" " + c._s(x) + " ")]);
   }), c.error ? h("div", [c._v(c._s(c.error))]) : c._e()], 2) : c._e(), c.helper ? h("small", { staticClass: "form-text text-muted" }, [c._v(c._s(c.helper))]) : c._e()]);
 }, _sfc_staticRenderFns$5 = [], __component__$5 = /* @__PURE__ */ normalizeComponent(
@@ -65322,7 +65322,7 @@ var _sfc_render$5 = function f() {
   _sfc_staticRenderFns$5,
   !1,
   null,
-  "24eeb62c",
+  "58d0ce60",
   null,
   null
 );

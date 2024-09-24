@@ -1,6 +1,6 @@
 <template>
     <div class="form-group">
-      <label :class="labelClass" v-uni-for="name">{{label}}</label>
+      <!-- <label :class="labelClass" v-uni-for="name">{{label}}</label> -->
       <div :class="classList">
         <div :id="uniqIdsMixin" ></div>
       </div>
