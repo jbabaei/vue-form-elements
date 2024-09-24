@@ -161,6 +161,8 @@
         "value": function(newVal, oldVal) { // watch it
           console.log('Prop changed: ', newVal, ' | was: ', oldVal);
 
+          console.log('column value---',this.column);
+
           var ddd=new DataTable('#grid-element', {
                     data: eval(newVal),//eval(newVal), //JSON.parse(newVal),
                     columns: eval(this.column),

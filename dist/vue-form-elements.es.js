@@ -65190,7 +65190,7 @@ $.fn.DataTable = function(f) {
 $.each(DataTable, function(f, c) {
   $.fn.DataTable[f] = c;
 });
-const FormGrid_vue_vue_type_style_index_0_scoped_bf7a8aec_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
+const FormGrid_vue_vue_type_style_index_0_scoped_f3fbc46f_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
   components: {
     OptionboxView
   },
@@ -65290,7 +65290,7 @@ const FormGrid_vue_vue_type_style_index_0_scoped_bf7a8aec_lang = "", FormGrid_vu
   },
   watch: {
     value: function(newVal, oldVal) {
-      console.log("Prop changed: ", newVal, " | was: ", oldVal);
+      console.log("Prop changed: ", newVal, " | was: ", oldVal), console.log("column value---", this.column);
       var ddd = new DataTable("#grid-element", {
         data: eval(newVal),
         //eval(newVal), //JSON.parse(newVal),
@@ -65326,7 +65326,7 @@ var _sfc_render$5 = function f() {
   _sfc_staticRenderFns$5,
   !1,
   null,
-  "bf7a8aec",
+  "f3fbc46f",
   null,
   null
 );
