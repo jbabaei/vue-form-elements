@@ -9,7 +9,7 @@
       <div v-html="content"></div>
 
       Grid
-      <!-- <input type="hidden" value="{{ content }}" onchange="generateGrid()"> -->
+      <input type="hidden" :value="value">
       <table id="grid-element" class="display"></table>
 
       <div
