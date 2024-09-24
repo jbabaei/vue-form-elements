@@ -5,11 +5,11 @@
         <div :id="uniqIdsMixin" ></div>
       </div>
       
-      Data
+      <!-- Data
       <div v-html="content"></div>
 
       Grid
-      <input type="hidden" :value="value">
+      <input type="hidden" :value="value"> -->
       <table id="grid-element" class="display"></table>
 
       <div
@@ -171,7 +171,7 @@
                     orderMulti:true
                 });
 
-          console.log("dataTable -----",ddd);
+          // console.log("dataTable -----",ddd);
         },
         "column": function(newVal, oldVal) { // watch it
           console.log('Column Prop changed: ', newVal, ' | was: ', oldVal);
@@ -186,7 +186,7 @@
                     orderMulti:true
                 });
 
-                console.log("dataTable -----",ddd);
+                // console.log("dataTable -----",ddd);
         }
       }
   };
