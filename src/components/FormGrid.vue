@@ -162,8 +162,8 @@
           console.log('Prop changed: ', newVal, ' | was: ', oldVal)
 
           var ddd=new DataTable('#grid-element', {
-                    data: JSON.stringify(newVal),//eval(newVal), //JSON.parse(newVal),
-                    columns: JSON.stringify(this.column),
+                    data: eval(newVal),//eval(newVal), //JSON.parse(newVal),
+                    columns: eval(this.column),
                     responsive: true,
                     destroy:true,
                     orderMulti:true
@@ -172,11 +172,11 @@
         "column": function(newVal, oldVal) { // watch it
           console.log('Column Prop changed: ', newVal, ' | was: ', oldVal)
 
-          console.log("+++ Value:",this.value);
+          console.log("+++ Value:",this.value)
 
           var ddd=new DataTable('#grid-element', {
-                    data: JSON.stringify(this.value), //this.value,//eval(this.content), //JSON.parse(this.value),
-                    columns: JSON.stringify(newVal),
+                    data: eval(this.value), //this.value,//eval(this.content), //JSON.parse(this.value),
+                    columns: eval(newVal),
                     responsive: true,
                     destroy:true,
                     orderMulti:true
