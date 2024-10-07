@@ -65190,7 +65190,7 @@ $.fn.DataTable = function(f) {
 $.each(DataTable, function(f, c) {
   $.fn.DataTable[f] = c;
 });
-const FormGrid_vue_vue_type_style_index_0_scoped_58d0ce60_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
+const FormGrid_vue_vue_type_style_index_0_scoped_6f413c27_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
   components: {
     OptionboxView
   },
@@ -65290,30 +65290,30 @@ const FormGrid_vue_vue_type_style_index_0_scoped_58d0ce60_lang = "", FormGrid_vu
   },
   watch: {
     value: function(newVal, oldVal) {
-      console.log("Prop changed: ", newVal, " | was: ", oldVal), console.log("column value---", this.column), new DataTable("#grid-element", {
+      console.log("Prop changed: ", newVal, " | was: ", oldVal), console.log("column value---", this.column), this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element", {
         data: eval(newVal),
         //eval(newVal), //JSON.parse(newVal),
         columns: eval(this.column),
         responsive: !0,
         destroy: !0,
         orderMulti: !0
-      });
+      }) : new DataTable("#grid-element", eval(newVal));
     },
     column: function(newVal, oldVal) {
-      console.log("Column Prop changed: ", newVal, " | was: ", oldVal), console.log("+++ Value:", this.value), new DataTable("#grid-element", {
+      newVal !== void 0 && newVal.length > 0 ? new DataTable("#grid-element", {
         data: eval(this.value),
-        //this.value,//eval(this.content), //JSON.parse(this.value),
+        //eval(newVal), //JSON.parse(newVal),
         columns: eval(newVal),
         responsive: !0,
         destroy: !0,
         orderMulti: !0
-      });
+      }) : new DataTable("#grid-element", eval(newVal));
     }
   }
 };
 var _sfc_render$5 = function f() {
   var c = this, h = c._self._c;
-  return h("div", { staticClass: "form-group" }, [h("div", { class: c.classList }, [h("div", { attrs: { id: c.uniqIdsMixin } })]), h("table", { staticClass: "display", attrs: { id: "grid-element" } }), c.validator && c.validator.errorCount || c.error ? h("div", { staticClass: "invalid-feedback" }, [c._l(c.validator.errors.get(this.name), function(x, E) {
+  return h("div", { staticClass: "form-group" }, [h("label", { directives: [{ name: "uni-for", rawName: "v-uni-for", value: c.name, expression: "name" }], class: c.labelClass }, [c._v(c._s(c.$t(c.label)))]), h("div", { class: c.classList }, [h("div", { attrs: { id: c.uniqIdsMixin } })]), h("table", { staticClass: "display", attrs: { id: "grid-element" } }), c.validator && c.validator.errorCount || c.error ? h("div", { staticClass: "invalid-feedback" }, [c._l(c.validator.errors.get(this.name), function(x, E) {
     return h("div", { key: E }, [c._v(" " + c._s(x) + " ")]);
   }), c.error ? h("div", [c._v(c._s(c.error))]) : c._e()], 2) : c._e(), c.helper ? h("small", { staticClass: "form-text text-muted" }, [c._v(c._s(c.helper))]) : c._e()]);
 }, _sfc_staticRenderFns$5 = [], __component__$5 = /* @__PURE__ */ normalizeComponent(
@@ -65322,7 +65322,7 @@ var _sfc_render$5 = function f() {
   _sfc_staticRenderFns$5,
   !1,
   null,
-  "58d0ce60",
+  "6f413c27",
   null,
   null
 );

@@ -1,6 +1,7 @@
 <template>
     <div class="form-group">
-      <!-- <label :class="labelClass" v-uni-for="name">{{label}}</label> -->
+      <label :class="labelClass" v-uni-for="name">{{ $t(label) }}</label>
+
       <div :class="classList">
         <div :id="uniqIdsMixin" ></div>
       </div>
@@ -163,28 +164,45 @@
 
           console.log('column value---',this.column);
 
-          var ddd=new DataTable('#grid-element', {
-                    data: eval(newVal),//eval(newVal), //JSON.parse(newVal),
-                    columns: eval(this.column),
-                    responsive: true,
-                    destroy:true,
-                    orderMulti:true
-                });
+          if(this.column !== undefined && this.column.length > 0){
+            var ddd=new DataTable('#grid-element', {
+                      data: eval(newVal),//eval(newVal), //JSON.parse(newVal),
+                      columns: eval(this.column),
+                      responsive: true,
+                      destroy:true,
+                      orderMulti:true
+                  });
+          }else{
+            var ddd=new DataTable('#grid-element', eval(newVal));
+          }
 
           // console.log("dataTable -----",ddd);
         },
         "column": function(newVal, oldVal) { // watch it
-          console.log('Column Prop changed: ', newVal, ' | was: ', oldVal);
+          // console.log('Column Prop changed: ', newVal, ' | was: ', oldVal);
 
-          console.log("+++ Value:",this.value);
+          // console.log("+++ Value:",this.value);
 
-          var ddd=new DataTable('#grid-element', {
-                    data: eval(this.value), //this.value,//eval(this.content), //JSON.parse(this.value),
-                    columns: eval(newVal),
-                    responsive: true,
-                    destroy:true,
-                    orderMulti:true
-                });
+          if(newVal !== undefined && newVal.length > 0){
+            var ddd=new DataTable('#grid-element', {
+                      data: eval(this.value),//eval(newVal), //JSON.parse(newVal),
+                      columns: eval(newVal),
+                      responsive: true,
+                      destroy:true,
+                      orderMulti:true
+                  });
+          }else{
+            var ddd=new DataTable('#grid-element', eval(newVal));
+          }
+
+
+          // var ddd=new DataTable('#grid-element', {
+          //           data: eval(this.value), //this.value,//eval(this.content), //JSON.parse(this.value),
+          //           columns: eval(newVal),
+          //           responsive: true,
+          //           destroy:true,
+          //           orderMulti:true
+          //       });
 
                 // console.log("dataTable -----",ddd);
         }
