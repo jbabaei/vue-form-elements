@@ -65190,7 +65190,7 @@ $.fn.DataTable = function(f) {
 $.each(DataTable, function(f, c) {
   $.fn.DataTable[f] = c;
 });
-const FormGrid_vue_vue_type_style_index_0_scoped_6f413c27_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
+const FormGrid_vue_vue_type_style_index_0_scoped_746ef216_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
   components: {
     OptionboxView
   },
@@ -65297,7 +65297,7 @@ const FormGrid_vue_vue_type_style_index_0_scoped_6f413c27_lang = "", FormGrid_vu
         responsive: !0,
         destroy: !0,
         orderMulti: !0
-      }) : new DataTable("#grid-element", eval(newVal));
+      }) : new DataTable("#grid-element", newVal);
     },
     column: function(newVal, oldVal) {
       newVal !== void 0 && newVal.length > 0 ? new DataTable("#grid-element", {
@@ -65307,7 +65307,7 @@ const FormGrid_vue_vue_type_style_index_0_scoped_6f413c27_lang = "", FormGrid_vu
         responsive: !0,
         destroy: !0,
         orderMulti: !0
-      }) : new DataTable("#grid-element", eval(newVal));
+      }) : new DataTable("#grid-element", newVal);
     }
   }
 };
@@ -65322,7 +65322,7 @@ var _sfc_render$5 = function f() {
   _sfc_staticRenderFns$5,
   !1,
   null,
-  "6f413c27",
+  "746ef216",
   null,
   null
 );

@@ -173,7 +173,7 @@
                       orderMulti:true
                   });
           }else{
-            var ddd=new DataTable('#grid-element', eval(newVal));
+            var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
           }
 
           // console.log("dataTable -----",ddd);
@@ -192,7 +192,7 @@
                       orderMulti:true
                   });
           }else{
-            var ddd=new DataTable('#grid-element', eval(newVal));
+            var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
           }
 
 
