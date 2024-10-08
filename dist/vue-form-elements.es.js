@@ -65190,7 +65190,7 @@ $.fn.DataTable = function(f) {
 $.each(DataTable, function(f, c) {
   $.fn.DataTable[f] = c;
 });
-const FormGrid_vue_vue_type_style_index_0_scoped_68ac4f92_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
+const FormGrid_vue_vue_type_style_index_0_scoped_7feb40b5_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
   components: {
     OptionboxView
   },
@@ -65245,21 +65245,24 @@ const FormGrid_vue_vue_type_style_index_0_scoped_68ac4f92_lang = "", FormGrid_vu
         key: this.options.key
       };
     },
-    rendered() {
-      if (console.log("formGrid rendered--------------", this.value), this.value !== void 0 && (this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element", {
+    mounted() {
+      console.log("formGrid rendered--------------", this.value), this.value !== void 0 && (this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element", {
         data: eval(this.value),
         //eval(newVal), //JSON.parse(newVal),
         columns: eval(this.column),
         responsive: !0,
         destroy: !0,
         orderMulti: !0
-      }) : new DataTable("#grid-element", this.value)), !this.validationData)
+      }) : new DataTable("#grid-element", this.value));
+    },
+    rendered() {
+      if (!this.validationData)
         return this.content;
-      const data = this.makeProxyData();
+      const f = this.makeProxyData();
       this.overwriteMustacheEscape();
       try {
-        return this.renderVarHtml ? Mustache.render(this.content, data) : Mustache.render(this.content, data);
-      } catch (f) {
+        return this.renderVarHtml ? Mustache.render(this.content, f) : Mustache.render(this.content, f);
+      } catch {
         return this.renderVarHtml ? this.renderVarName : this.content;
       } finally {
         Mustache.escape = this.originalEscapeFn;
@@ -65329,7 +65332,7 @@ var _sfc_render$5 = function f() {
   _sfc_staticRenderFns$5,
   !1,
   null,
-  "68ac4f92",
+  "7feb40b5",
   null,
   null
 );

@@ -102,7 +102,7 @@
             key: this.options.key
           };
       },
-      rendered() {
+      mounted(){
         console.log("formGrid rendered--------------",this.value);
           
           if(this.value !== undefined){
@@ -118,9 +118,8 @@
               var ddd=new DataTable('#grid-element', this.value);//eval(newVal));
             }
         }
-
-
-
+      },
+      rendered() {
         // If we have't validationData, we can't evaluate the mustache variables
         // Used by ScreenBuilder in Design Mode
         if (!this.validationData) {
