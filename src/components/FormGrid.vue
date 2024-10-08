@@ -103,15 +103,7 @@
           };
       },
       rendered() {
-        // If we have't validationData, we can't evaluate the mustache variables
-        // Used by ScreenBuilder in Design Mode
-        if (!this.validationData) {
-          return this.content;
-        }
-        const data = this.makeProxyData(); // Gets the data
-        this.overwriteMustacheEscape();
-        try {
-          console.log("formGrid rendered--------------",this.value);
+        console.log("formGrid rendered--------------",this.value);
           
           if(this.value !== undefined){
             if(this.column !== undefined && this.column.length > 0){
@@ -127,6 +119,17 @@
             }
         }
 
+
+
+        // If we have't validationData, we can't evaluate the mustache variables
+        // Used by ScreenBuilder in Design Mode
+        if (!this.validationData) {
+          return this.content;
+        }
+        const data = this.makeProxyData(); // Gets the data
+        this.overwriteMustacheEscape();
+        try {
+         
           if (this.renderVarHtml) {
             return Mustache.render(this.content, data);
           }

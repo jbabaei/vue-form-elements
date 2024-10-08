@@ -65190,7 +65190,7 @@ $.fn.DataTable = function(f) {
 $.each(DataTable, function(f, c) {
   $.fn.DataTable[f] = c;
 });
-const FormGrid_vue_vue_type_style_index_0_scoped_49270c1a_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
+const FormGrid_vue_vue_type_style_index_0_scoped_68ac4f92_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
   components: {
     OptionboxView
   },
@@ -65246,23 +65246,18 @@ const FormGrid_vue_vue_type_style_index_0_scoped_49270c1a_lang = "", FormGrid_vu
       };
     },
     rendered() {
-      if (!this.validationData)
+      if (console.log("formGrid rendered--------------", this.value), this.value !== void 0 && (this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element", {
+        data: eval(this.value),
+        //eval(newVal), //JSON.parse(newVal),
+        columns: eval(this.column),
+        responsive: !0,
+        destroy: !0,
+        orderMulti: !0
+      }) : new DataTable("#grid-element", this.value)), !this.validationData)
         return this.content;
       const data = this.makeProxyData();
       this.overwriteMustacheEscape();
       try {
-        if (console.log("formGrid rendered--------------", this.value), this.value !== void 0)
-          if (this.column !== void 0 && this.column.length > 0)
-            var ddd = new DataTable("#grid-element", {
-              data: eval(this.value),
-              //eval(newVal), //JSON.parse(newVal),
-              columns: eval(this.column),
-              responsive: !0,
-              destroy: !0,
-              orderMulti: !0
-            });
-          else
-            var ddd = new DataTable("#grid-element", this.value);
         return this.renderVarHtml ? Mustache.render(this.content, data) : Mustache.render(this.content, data);
       } catch (f) {
         return this.renderVarHtml ? this.renderVarName : this.content;
@@ -65334,7 +65329,7 @@ var _sfc_render$5 = function f() {
   _sfc_staticRenderFns$5,
   !1,
   null,
-  "49270c1a",
+  "68ac4f92",
   null,
   null
 );
