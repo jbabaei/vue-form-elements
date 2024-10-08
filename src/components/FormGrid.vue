@@ -111,6 +111,22 @@
         const data = this.makeProxyData(); // Gets the data
         this.overwriteMustacheEscape();
         try {
+          console.log("formGrid rendered--------------",this.value);
+          
+          if(this.value !== undefined){
+            if(this.column !== undefined && this.column.length > 0){
+              var ddd=new DataTable('#grid-element', {
+                        data: eval(this.value),//eval(newVal), //JSON.parse(newVal),
+                        columns: eval(this.column),
+                        responsive: true,
+                        destroy:true,
+                        orderMulti:true
+                    });
+            }else{
+              var ddd=new DataTable('#grid-element', this.value);//eval(newVal));
+            }
+        }
+
           if (this.renderVarHtml) {
             return Mustache.render(this.content, data);
           }
@@ -207,7 +223,7 @@
 
                 // console.log("dataTable -----",ddd);
         }
-      }
+    }
   };
   </script>
   
