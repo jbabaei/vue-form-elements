@@ -1,16 +1,16 @@
 <template>
     <div class="form-group">
-      <label :class="labelClass" v-uni-for="name">{{ $t(label) }}</label>
+      <!-- <label :class="labelClass" v-uni-for="name">{{ $t(label) }}</label> -->
 
       <div :class="classList">
         <div :id="uniqIdsMixin" ></div>
       </div>
       
       <!-- Data
-      <div v-html="content"></div>
+      <div v-html="content"></div>-->
 
-      Grid
-      <input type="hidden" :value="value"> -->
+      
+      <input type="hidden" :value="value"> 
       <table id="grid-element" class="display"></table>
 
       <div
