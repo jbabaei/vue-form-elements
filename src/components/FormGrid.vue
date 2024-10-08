@@ -7,10 +7,10 @@
       </div>
       
       <!-- Data
-      <div v-html="content"></div>-->
+      <div v-html="content"></div>
 
       
-      <input type="hidden" :value="JSON.stringify(value)"> 
+      <input type="hidden" :value="JSON.stringify(value)"> -->
       
       <table id="grid-element" class="display"></table>
 
@@ -80,7 +80,7 @@
       };
     },
     mounted(){
-        console.log("formGrid rendered--------------",this.value);
+        // console.log("formGrid rendered--------------",this.value);
           
           if(this.value !== undefined){
             if(this.column !== undefined && this.column.length > 0){
