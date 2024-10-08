@@ -10,7 +10,8 @@
       <div v-html="content"></div>-->
 
       
-      <input type="hidden" :value="value"> 
+      <input type="hidden" :value="JSON.stringify(value)"> 
+      
       <table id="grid-element" class="display"></table>
 
       <div
