@@ -80,9 +80,9 @@
       };
     },
     mounted(){
-        // console.log("formGrid rendered--------------",this.value);
+        //console.log("formGrid rendered--------------",this.value);
           
-          if(this.value !== undefined){
+          if(this.value !== undefined && this.value !== null){
             if(this.column !== undefined && this.column.length > 0){
               var ddd=new DataTable('#grid-element', {
                         data: eval(this.value),//eval(newVal), //JSON.parse(newVal),
@@ -94,7 +94,7 @@
             }else{
               var ddd=new DataTable('#grid-element', this.value);//eval(newVal));
             }
-        }
+          }
       },
     computed: {
       classList() {

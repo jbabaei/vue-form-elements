@@ -65190,7 +65190,7 @@ $.fn.DataTable = function(f) {
 $.each(DataTable, function(f, c) {
   $.fn.DataTable[f] = c;
 });
-const FormGrid_vue_vue_type_style_index_0_scoped_fbeadb17_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
+const FormGrid_vue_vue_type_style_index_0_scoped_238d81d9_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
   components: {
     OptionboxView
   },
@@ -65227,7 +65227,7 @@ const FormGrid_vue_vue_type_style_index_0_scoped_fbeadb17_lang = "", FormGrid_vu
     };
   },
   mounted() {
-    this.value !== void 0 && (this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element", {
+    this.value !== void 0 && this.value !== null && (this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element", {
       data: eval(this.value),
       //eval(newVal), //JSON.parse(newVal),
       columns: eval(this.column),
@@ -65332,7 +65332,7 @@ var _sfc_render$5 = function f() {
   _sfc_staticRenderFns$5,
   !1,
   null,
-  "fbeadb17",
+  "238d81d9",
   null,
   null
 );
