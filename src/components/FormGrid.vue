@@ -92,7 +92,15 @@
                         orderMulti:true
                     });
             }else{
-              var ddd=new DataTable('#grid-element', this.value);//eval(newVal));
+              //var ddd=new DataTable('#grid-element', this.value);//eval(newVal));
+              
+              var ddd=new DataTable('#grid-element', {
+                        data: eval(this.value).data,//eval(newVal), //JSON.parse(newVal),
+                        columns: eval(this.value).columns,
+                        responsive: true,
+                        destroy:true,
+                        orderMulti:true
+                    });//eval(newVal));
             }
           }
       },
@@ -192,7 +200,14 @@
                       orderMulti:true
                   });
           }else{
-            var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
+            //var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
+            var ddd=new DataTable('#grid-element', {
+                      data: eval(newVal).data,//eval(newVal), //JSON.parse(newVal),
+                      columns: eval(newVal).columns,
+                      responsive: true,
+                      destroy:true,
+                      orderMulti:true
+                  });
           }
 
           // console.log("dataTable -----",ddd);
@@ -211,7 +226,15 @@
                       orderMulti:true
                   });
           }else{
-            var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
+            //var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
+
+            var ddd=new DataTable('#grid-element', {
+                      data: eval(newVal).data,//eval(newVal), //JSON.parse(newVal),
+                      columns: eval(newVal).columns,
+                      responsive: true,
+                      destroy:true,
+                      orderMulti:true
+                  });//eval(newVal));
           }
 
 

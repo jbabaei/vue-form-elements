@@ -65190,7 +65190,7 @@ $.fn.DataTable = function(f) {
 $.each(DataTable, function(f, c) {
   $.fn.DataTable[f] = c;
 });
-const FormGrid_vue_vue_type_style_index_0_scoped_238d81d9_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
+const FormGrid_vue_vue_type_style_index_0_scoped_0711633b_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
   components: {
     OptionboxView
   },
@@ -65234,7 +65234,14 @@ const FormGrid_vue_vue_type_style_index_0_scoped_238d81d9_lang = "", FormGrid_vu
       responsive: !0,
       destroy: !0,
       orderMulti: !0
-    }) : new DataTable("#grid-element", this.value));
+    }) : new DataTable("#grid-element", {
+      data: eval(this.value).data,
+      //eval(newVal), //JSON.parse(newVal),
+      columns: eval(this.value).columns,
+      responsive: !0,
+      destroy: !0,
+      orderMulti: !0
+    }));
   },
   computed: {
     classList() {
@@ -65307,7 +65314,14 @@ const FormGrid_vue_vue_type_style_index_0_scoped_238d81d9_lang = "", FormGrid_vu
         responsive: !0,
         destroy: !0,
         orderMulti: !0
-      }) : new DataTable("#grid-element", newVal);
+      }) : new DataTable("#grid-element", {
+        data: eval(newVal).data,
+        //eval(newVal), //JSON.parse(newVal),
+        columns: eval(newVal).columns,
+        responsive: !0,
+        destroy: !0,
+        orderMulti: !0
+      });
     },
     column: function(newVal, oldVal) {
       newVal !== void 0 && newVal.length > 0 ? new DataTable("#grid-element", {
@@ -65317,7 +65331,14 @@ const FormGrid_vue_vue_type_style_index_0_scoped_238d81d9_lang = "", FormGrid_vu
         responsive: !0,
         destroy: !0,
         orderMulti: !0
-      }) : new DataTable("#grid-element", newVal);
+      }) : new DataTable("#grid-element", {
+        data: eval(newVal).data,
+        //eval(newVal), //JSON.parse(newVal),
+        columns: eval(newVal).columns,
+        responsive: !0,
+        destroy: !0,
+        orderMulti: !0
+      });
     }
   }
 };
@@ -65332,7 +65353,7 @@ var _sfc_render$5 = function f() {
   _sfc_staticRenderFns$5,
   !1,
   null,
-  "238d81d9",
+  "0711633b",
   null,
   null
 );
