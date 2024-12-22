@@ -12,8 +12,9 @@
       
       <input type="hidden" :value="JSON.stringify(value)"> -->
       
-      <table id="grid-element" class="display"></table>
-
+      <div class="grid-cnt">
+        <table id="grid-element" class="display"></table>
+      </div>
       <div
         v-if="(validator && validator.errorCount) || error"
         class="invalid-feedback"
