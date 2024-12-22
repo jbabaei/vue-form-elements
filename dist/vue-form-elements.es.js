@@ -65190,7 +65190,7 @@ $.fn.DataTable = function(f) {
 $.each(DataTable, function(f, c) {
   $.fn.DataTable[f] = c;
 });
-const FormGrid_vue_vue_type_style_index_0_scoped_0711633b_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
+const FormGrid_vue_vue_type_style_index_0_scoped_e22888fc_lang = "", FormGrid_vue_vue_type_style_index_1_lang = "", uniqIdsMixin$3 = createMixin(), _sfc_main$5 = {
   components: {
     OptionboxView
   },
@@ -65307,20 +65307,22 @@ const FormGrid_vue_vue_type_style_index_0_scoped_0711633b_lang = "", FormGrid_vu
   },
   watch: {
     value: function(newVal, oldVal) {
-      console.log("Prop changed: ", newVal, " | was: ", oldVal), console.log("column value---", this.column), this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element", {
+      this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element", {
         data: eval(newVal),
         //eval(newVal), //JSON.parse(newVal),
         columns: eval(this.column),
         responsive: !0,
         destroy: !0,
-        orderMulti: !0
+        orderMulti: !0,
+        scrollX: !0
       }) : new DataTable("#grid-element", {
         data: eval(newVal).data,
         //eval(newVal), //JSON.parse(newVal),
         columns: eval(newVal).columns,
         responsive: !0,
         destroy: !0,
-        orderMulti: !0
+        orderMulti: !0,
+        scrollX: !0
       });
     },
     column: function(newVal, oldVal) {
@@ -65330,30 +65332,35 @@ const FormGrid_vue_vue_type_style_index_0_scoped_0711633b_lang = "", FormGrid_vu
         columns: eval(newVal),
         responsive: !0,
         destroy: !0,
-        orderMulti: !0
+        orderMulti: !0,
+        scrollX: !0
       }) : new DataTable("#grid-element", {
         data: eval(newVal).data,
         //eval(newVal), //JSON.parse(newVal),
         columns: eval(newVal).columns,
         responsive: !0,
         destroy: !0,
-        orderMulti: !0
+        orderMulti: !0,
+        scrollX: !0
       });
     }
   }
 };
 var _sfc_render$5 = function f() {
   var c = this, h = c._self._c;
-  return h("div", { staticClass: "form-group" }, [h("div", { class: c.classList }, [h("div", { attrs: { id: c.uniqIdsMixin } })]), h("table", { staticClass: "display", attrs: { id: "grid-element" } }), c.validator && c.validator.errorCount || c.error ? h("div", { staticClass: "invalid-feedback" }, [c._l(c.validator.errors.get(this.name), function(x, E) {
+  return h("div", { staticClass: "form-group" }, [h("div", { class: c.classList }, [h("div", { attrs: { id: c.uniqIdsMixin } })]), c._m(0), c.validator && c.validator.errorCount || c.error ? h("div", { staticClass: "invalid-feedback" }, [c._l(c.validator.errors.get(this.name), function(x, E) {
     return h("div", { key: E }, [c._v(" " + c._s(x) + " ")]);
   }), c.error ? h("div", [c._v(c._s(c.error))]) : c._e()], 2) : c._e(), c.helper ? h("small", { staticClass: "form-text text-muted" }, [c._v(c._s(c.helper))]) : c._e()]);
-}, _sfc_staticRenderFns$5 = [], __component__$5 = /* @__PURE__ */ normalizeComponent(
+}, _sfc_staticRenderFns$5 = [function() {
+  var f = this, c = f._self._c;
+  return c("div", { staticClass: "grid-cnt" }, [c("table", { staticClass: "display", attrs: { id: "grid-element" } })]);
+}], __component__$5 = /* @__PURE__ */ normalizeComponent(
   _sfc_main$5,
   _sfc_render$5,
   _sfc_staticRenderFns$5,
   !1,
   null,
-  "0711633b",
+  "e22888fc",
   null,
   null
 );
