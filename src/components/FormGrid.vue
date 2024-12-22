@@ -187,9 +187,9 @@
     },
     watch: { 
         "value": function(newVal, oldVal) { // watch it
-          console.log('Prop changed: ', newVal, ' | was: ', oldVal);
+          // console.log('Prop changed: ', newVal, ' | was: ', oldVal);
 
-          console.log('column value---',this.column);
+          // console.log('column value---',this.column);
 
           if(this.column !== undefined && this.column.length > 0){
             var ddd=new DataTable('#grid-element', {
@@ -197,7 +197,8 @@
                       columns: eval(this.column),
                       responsive: true,
                       destroy:true,
-                      orderMulti:true
+                      orderMulti:true,
+                      scrollX: true
                   });
           }else{
             //var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
@@ -206,7 +207,8 @@
                       columns: eval(newVal).columns,
                       responsive: true,
                       destroy:true,
-                      orderMulti:true
+                      orderMulti:true,
+                      scrollX: true
                   });
           }
 
@@ -223,7 +225,8 @@
                       columns: eval(newVal),
                       responsive: true,
                       destroy:true,
-                      orderMulti:true
+                      orderMulti:true,
+                      scrollX: true
                   });
           }else{
             //var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
@@ -233,7 +236,8 @@
                       columns: eval(newVal).columns,
                       responsive: true,
                       destroy:true,
-                      orderMulti:true
+                      orderMulti:true,
+                      scrollX: true
                   });//eval(newVal));
           }
 
