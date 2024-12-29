@@ -259,15 +259,15 @@
   };
   </script>
   
-  <style scoped>
-  .invalid-feedback {
+  <style>
+  /* .invalid-feedback {
     display: block;
   }
   
   .is-invalid {
     border: 1px solid #dc3545;
     border-radius: 0.25rem;
-  }
+  } */
 
   @media only screen and (max-width: 990px) {
     table.dataTable thead>tr>th,table.dataTable tbody>tr>td{
