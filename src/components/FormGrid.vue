@@ -90,7 +90,8 @@
                         columns: eval(this.column),
                         responsive: true,
                         destroy:true,
-                        orderMulti:true
+                        orderMulti:true,
+                        scrollX: true
                     });
             }else{
               //var ddd=new DataTable('#grid-element', this.value);//eval(newVal));
@@ -100,7 +101,8 @@
                         columns: eval(this.value).columns,
                         responsive: true,
                         destroy:true,
-                        orderMulti:true
+                        orderMulti:true,
+                        scrollX: true
                     });//eval(newVal));
             }
           }
@@ -265,6 +267,12 @@
   .is-invalid {
     border: 1px solid #dc3545;
     border-radius: 0.25rem;
+  }
+
+  @media only screen and (max-width: 990px) {
+    table.dataTable thead>tr>th,table.dataTable tbody>tr>td{
+      min-width: 140px;
+    }
   }
   </style>
   
