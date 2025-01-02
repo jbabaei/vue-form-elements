@@ -197,6 +197,7 @@
           if(this.column !== undefined && this.column.length > 0){
             var table = new DataTable('#grid-element');
             table.destroy();
+            $('#grid-element').empty();
 
             var ddd=new DataTable('#grid-element', {
                       data: eval(newVal),//eval(newVal), //JSON.parse(newVal),
@@ -209,7 +210,8 @@
           }else{
             var table = new DataTable('#grid-element');
             table.destroy();
-            
+            $('#grid-element').empty();
+
             //var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
             var ddd=new DataTable('#grid-element', {
                       data: eval(newVal).data,//eval(newVal), //JSON.parse(newVal),
@@ -231,7 +233,8 @@
           if(newVal !== undefined && newVal.length > 0){
             var table = new DataTable('#grid-element');
             table.destroy();
-            
+            $('#grid-element').empty();
+
             var ddd=new DataTable('#grid-element', {
                       data: eval(this.value),//eval(newVal), //JSON.parse(newVal),
                       columns: eval(newVal),
@@ -244,7 +247,7 @@
             //var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
             var table = new DataTable('#grid-element');
             table.destroy();
-            
+            $('#grid-element').empty();
 
             var ddd=new DataTable('#grid-element', {
                       data: eval(newVal).data,//eval(newVal), //JSON.parse(newVal),
