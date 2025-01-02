@@ -195,6 +195,9 @@
           // console.log('column value---',this.column);
 
           if(this.column !== undefined && this.column.length > 0){
+            var table = new DataTable('#grid-element');
+            table.destroy();
+
             var ddd=new DataTable('#grid-element', {
                       data: eval(newVal),//eval(newVal), //JSON.parse(newVal),
                       columns: eval(this.column),
@@ -204,6 +207,9 @@
                       scrollX: true
                   });
           }else{
+            var table = new DataTable('#grid-element');
+            table.destroy();
+            
             //var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
             var ddd=new DataTable('#grid-element', {
                       data: eval(newVal).data,//eval(newVal), //JSON.parse(newVal),
@@ -223,6 +229,9 @@
           // console.log("+++ Value:",this.value);
 
           if(newVal !== undefined && newVal.length > 0){
+            var table = new DataTable('#grid-element');
+            table.destroy();
+            
             var ddd=new DataTable('#grid-element', {
                       data: eval(this.value),//eval(newVal), //JSON.parse(newVal),
                       columns: eval(newVal),
@@ -233,6 +242,9 @@
                   });
           }else{
             //var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
+            var table = new DataTable('#grid-element');
+            table.destroy();
+            
 
             var ddd=new DataTable('#grid-element', {
                       data: eval(newVal).data,//eval(newVal), //JSON.parse(newVal),
@@ -268,12 +280,6 @@
     border: 1px solid #dc3545;
     border-radius: 0.25rem;
   } */
-
-  @media only screen and (max-width: 990px) {
-    table.dataTable thead>tr>th,table.dataTable tbody>tr>td{
-      min-width: 140px;
-    }
-  }
   </style>
   
 

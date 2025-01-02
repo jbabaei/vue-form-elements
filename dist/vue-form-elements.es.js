@@ -65309,42 +65309,54 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
   },
   watch: {
     value: function(newVal, oldVal) {
-      this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element", {
-        data: eval(newVal),
-        //eval(newVal), //JSON.parse(newVal),
-        columns: eval(this.column),
-        responsive: !0,
-        destroy: !0,
-        orderMulti: !0,
-        scrollX: !0
-      }) : new DataTable("#grid-element", {
-        data: eval(newVal).data,
-        //eval(newVal), //JSON.parse(newVal),
-        columns: eval(newVal).columns,
-        responsive: !0,
-        destroy: !0,
-        orderMulti: !0,
-        scrollX: !0
-      });
+      if (this.column !== void 0 && this.column.length > 0) {
+        var table = new DataTable("#grid-element");
+        table.destroy(), new DataTable("#grid-element", {
+          data: eval(newVal),
+          //eval(newVal), //JSON.parse(newVal),
+          columns: eval(this.column),
+          responsive: !0,
+          destroy: !0,
+          orderMulti: !0,
+          scrollX: !0
+        });
+      } else {
+        var table = new DataTable("#grid-element");
+        table.destroy(), new DataTable("#grid-element", {
+          data: eval(newVal).data,
+          //eval(newVal), //JSON.parse(newVal),
+          columns: eval(newVal).columns,
+          responsive: !0,
+          destroy: !0,
+          orderMulti: !0,
+          scrollX: !0
+        });
+      }
     },
     column: function(newVal, oldVal) {
-      newVal !== void 0 && newVal.length > 0 ? new DataTable("#grid-element", {
-        data: eval(this.value),
-        //eval(newVal), //JSON.parse(newVal),
-        columns: eval(newVal),
-        responsive: !0,
-        destroy: !0,
-        orderMulti: !0,
-        scrollX: !0
-      }) : new DataTable("#grid-element", {
-        data: eval(newVal).data,
-        //eval(newVal), //JSON.parse(newVal),
-        columns: eval(newVal).columns,
-        responsive: !0,
-        destroy: !0,
-        orderMulti: !0,
-        scrollX: !0
-      });
+      if (newVal !== void 0 && newVal.length > 0) {
+        var table = new DataTable("#grid-element");
+        table.destroy(), new DataTable("#grid-element", {
+          data: eval(this.value),
+          //eval(newVal), //JSON.parse(newVal),
+          columns: eval(newVal),
+          responsive: !0,
+          destroy: !0,
+          orderMulti: !0,
+          scrollX: !0
+        });
+      } else {
+        var table = new DataTable("#grid-element");
+        table.destroy(), new DataTable("#grid-element", {
+          data: eval(newVal).data,
+          //eval(newVal), //JSON.parse(newVal),
+          columns: eval(newVal).columns,
+          responsive: !0,
+          destroy: !0,
+          orderMulti: !0,
+          scrollX: !0
+        });
+      }
     }
   }
 };
