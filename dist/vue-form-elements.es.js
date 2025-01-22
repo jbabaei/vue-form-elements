@@ -65318,7 +65318,10 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           responsive: !0,
           destroy: !0,
           orderMulti: !0,
-          scrollX: !0
+          scrollX: !0,
+          formatNumber: function(f) {
+            return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+          }
         });
       } else {
         var table = new DataTable("#grid-element");
@@ -65329,7 +65332,10 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           responsive: !0,
           destroy: !0,
           orderMulti: !0,
-          scrollX: !0
+          scrollX: !0,
+          formatNumber: function(f) {
+            return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+          }
         });
       }
     },
@@ -65343,7 +65349,10 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           responsive: !0,
           destroy: !0,
           orderMulti: !0,
-          scrollX: !0
+          scrollX: !0,
+          formatNumber: function(f) {
+            return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+          }
         });
       } else {
         var table = new DataTable("#grid-element");
@@ -65354,7 +65363,10 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           responsive: !0,
           destroy: !0,
           orderMulti: !0,
-          scrollX: !0
+          scrollX: !0,
+          formatNumber: function(f) {
+            return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+          }
         });
       }
     }
