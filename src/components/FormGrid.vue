@@ -205,7 +205,10 @@
                       responsive: true,
                       destroy:true,
                       orderMulti:true,
-                      scrollX: true
+                      scrollX: true,
+                      formatNumber: function (toFormat) {
+                                    return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+                      }
                   });
           }else{
             var table = new DataTable('#grid-element');
@@ -219,7 +222,10 @@
                       responsive: true,
                       destroy:true,
                       orderMulti:true,
-                      scrollX: true
+                      scrollX: true,
+                      formatNumber: function (toFormat) {
+                                    return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+                      }
                   });
           }
 
@@ -241,7 +247,10 @@
                       responsive: true,
                       destroy:true,
                       orderMulti:true,
-                      scrollX: true
+                      scrollX: true,
+                      formatNumber: function (toFormat) {
+                                    return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+                      }
                   });
           }else{
             //var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
@@ -255,7 +264,10 @@
                       responsive: true,
                       destroy:true,
                       orderMulti:true,
-                      scrollX: true
+                      scrollX: true,
+                      formatNumber: function (toFormat) {
+                                    return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+                      }
                   });//eval(newVal));
           }
 
