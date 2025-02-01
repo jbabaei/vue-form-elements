@@ -91,7 +91,10 @@
                         responsive: true,
                         destroy:true,
                         orderMulti:true,
-                        scrollX: true
+                        scrollX: true,
+                        select :{
+                          style :'multi'
+                        }
                     });
             }else{
               //var ddd=new DataTable('#grid-element', this.value);//eval(newVal));
@@ -102,7 +105,10 @@
                         responsive: true,
                         destroy:true,
                         orderMulti:true,
-                        scrollX: true
+                        scrollX: true,
+                        select :{
+                          style :'multi'
+                        }
                     });//eval(newVal));
             }
           }
@@ -206,6 +212,9 @@
                       destroy:true,
                       orderMulti:true,
                       scrollX: true,
+                        select :{
+                          style :'multi'
+                        },
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
                       }
@@ -223,6 +232,9 @@
                       destroy:true,
                       orderMulti:true,
                       scrollX: true,
+                        select :{
+                          style :'multi'
+                        },
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
                       }
@@ -248,6 +260,9 @@
                       destroy:true,
                       orderMulti:true,
                       scrollX: true,
+                        select :{
+                          style :'multi'
+                        },
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
                       }
@@ -265,6 +280,9 @@
                       destroy:true,
                       orderMulti:true,
                       scrollX: true,
+                        select :{
+                          style :'multi'
+                        },
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
                       }
