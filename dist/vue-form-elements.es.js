@@ -65235,9 +65235,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
       destroy: !0,
       orderMulti: !0,
       scrollX: !0,
-      select: {
-        style: "multi"
-      }
+      select: "multi"
     }) : new DataTable("#grid-element", {
       data: eval(this.value).data,
       //eval(newVal), //JSON.parse(newVal),
@@ -65246,9 +65244,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
       destroy: !0,
       orderMulti: !0,
       scrollX: !0,
-      select: {
-        style: "multi"
-      }
+      select: "multi"
     }));
   },
   computed: {
@@ -65325,9 +65321,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           destroy: !0,
           orderMulti: !0,
           scrollX: !0,
-          select: {
-            style: "multi"
-          },
+          select: "multi",
           formatNumber: function(f) {
             return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
           }
@@ -65342,9 +65336,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           destroy: !0,
           orderMulti: !0,
           scrollX: !0,
-          select: {
-            style: "multi"
-          },
+          select: "multi",
           formatNumber: function(f) {
             return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
           }
@@ -65362,9 +65354,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           destroy: !0,
           orderMulti: !0,
           scrollX: !0,
-          select: {
-            style: "multi"
-          },
+          select: "multi",
           formatNumber: function(f) {
             return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
           }
@@ -65379,9 +65369,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           destroy: !0,
           orderMulti: !0,
           scrollX: !0,
-          select: {
-            style: "multi"
-          },
+          select: "multi",
           formatNumber: function(f) {
             return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
           }
