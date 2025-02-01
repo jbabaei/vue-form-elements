@@ -40,6 +40,7 @@
 //   import Editor from "./Editor";
   import { formatIfDate } from "../dateUtils";
   import DataTable from 'datatables.net-dt';
+  import 'datatables.net-select';
 
   // Create the mixin
   const uniqIdsMixin = createUniqIdsMixin();
