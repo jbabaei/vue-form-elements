@@ -59,6 +59,9 @@
       "controlClass",
       //"content",
       "column",
+      "isSearchEnable",
+      "isPaginationEnable",
+      "pageSize",
       "validationData",
       "label",
       "renderVarHtml"
@@ -93,7 +96,10 @@
                         destroy:true,
                         orderMulti:true,
                         scrollX: true,
-                        select :"multi"
+                        select :"multi",
+                        searching: this.isSearchEnable,
+                        paging: this.isPaginationEnable,
+                        pageLength:this.pageSize
                     });
             }else{
               //var ddd=new DataTable('#grid-element', this.value);//eval(newVal));
@@ -105,7 +111,10 @@
                         destroy:true,
                         orderMulti:true,
                         scrollX: true,
-                        select :"multi"
+                        select :"multi",
+                        searching: this.isSearchEnable,
+                        paging: this.isPaginationEnable,
+                        pageLength:this.pageSize
                     });//eval(newVal));
             }
           }
@@ -209,7 +218,10 @@
                       destroy:true,
                       orderMulti:true,
                       scrollX: true,
-                        select :"multi",
+                      select :"multi",
+                      searching: this.isSearchEnable,
+                      paging: this.isPaginationEnable,
+                      pageLength:this.pageSize,
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
                       }
@@ -227,7 +239,10 @@
                       destroy:true,
                       orderMulti:true,
                       scrollX: true,
-                        select :"multi",
+                      select :"multi",
+                      searching: this.isSearchEnable,
+                      paging: this.isPaginationEnable,
+                      pageLength:this.pageSize,
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
                       }
@@ -253,7 +268,10 @@
                       destroy:true,
                       orderMulti:true,
                       scrollX: true,
-                        select :"multi",
+                      select :"multi",
+                      searching: this.isSearchEnable,
+                      paging: this.isPaginationEnable,
+                      pageLength:this.pageSize,
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
                       }
@@ -271,7 +289,10 @@
                       destroy:true,
                       orderMulti:true,
                       scrollX: true,
-                        select :"multi",
+                      select :"multi",
+                      searching: this.isSearchEnable,
+                      paging: this.isPaginationEnable,
+                      pageLength:this.pageSize,
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
                       }
