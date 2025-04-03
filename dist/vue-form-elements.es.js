@@ -65944,15 +65944,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
     rendered() {
       if (!this.validationData)
         return this.content;
-      const f = this.makeProxyData();
-      this.overwriteMustacheEscape();
-      try {
-        return this.renderVarHtml ? Mustache.render(this.content, f) : Mustache.render(this.content, f);
-      } catch {
-        return this.renderVarHtml ? this.renderVarName : this.content;
-      } finally {
-        Mustache.escape = this.originalEscapeFn;
-      }
+      this.makeProxyData();
     }
   },
   methods: {
@@ -65963,9 +65955,10 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
     /**
      * Backup and overwrite the original mustache escaped property
      */
-    overwriteMustacheEscape() {
-      this.originalEscapeFn = Mustache.escape, Mustache.escape = this.mustacheEscapeFn;
-    },
+    // overwriteMustacheEscape() {
+    //   this.originalEscapeFn = Mustache.escape;
+    //   // Mustache.escape = this.mustacheEscapeFn;
+    // },
     /**
      * Register custom functions to be included
      * @param {string} name
@@ -65973,16 +65966,19 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
      */
     registerCustomFunction(f, c) {
       this.customFunctions[f] = c;
-    },
+    }
     /**
      * Escape the mustache code, added in the tinyMCE editor
      * @param {string} text
      * @return {object}
      */
-    mustacheEscapeFn(f) {
-      const c = formatIfDate(f);
-      return this.renderVarHtml ? c : this.originalEscapeFn(c);
-    }
+    // mustacheEscapeFn(text) {
+    //   const formatedText = formatIfDate(text);
+    //   if (this.renderVarHtml) {
+    //     return formatedText;
+    //   }
+    //   return this.originalEscapeFn(formatedText);
+    // }
   },
   watch: {
     value: function(newVal, oldVal) {
