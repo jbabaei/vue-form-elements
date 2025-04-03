@@ -38,7 +38,7 @@
   import Mustache from "mustache";
   import ValidationMixin from "./mixins/validation";
 //   import Editor from "./Editor";
-  import { formatIfDate } from "../dateUtils";
+  // import { formatIfDate } from "../dateUtils";
   import DataTable from 'datatables.net-dt';
   import 'datatables.net-select';
 
@@ -149,21 +149,21 @@
           return this.content;
         }
         const data = this.makeProxyData(); // Gets the data
-        this.overwriteMustacheEscape();
-        try {
+        // this.overwriteMustacheEscape();
+        // try {
          
-          if (this.renderVarHtml) {
-            return Mustache.render(this.content, data);
-          }
-          return Mustache.render(this.content, data);
-        } catch (error) {
-          if (this.renderVarHtml) {
-            return this.renderVarName;
-          }
-          return this.content;
-        } finally {
-          Mustache.escape = this.originalEscapeFn;
-        }
+        //   if (this.renderVarHtml) {
+        //     return Mustache.render(this.content, data);
+        //   }
+        //   return Mustache.render(this.content, data);
+        // } catch (error) {
+        //   if (this.renderVarHtml) {
+        //     return this.renderVarName;
+        //   }
+        //   return this.content;
+        // } finally {
+        //   Mustache.escape = this.originalEscapeFn;
+        // }
       }
     },
     methods: {
@@ -175,10 +175,10 @@
       /**
        * Backup and overwrite the original mustache escaped property
        */
-      overwriteMustacheEscape() {
-        this.originalEscapeFn = Mustache.escape;
-        Mustache.escape = this.mustacheEscapeFn;
-      },
+      // overwriteMustacheEscape() {
+      //   this.originalEscapeFn = Mustache.escape;
+      //   // Mustache.escape = this.mustacheEscapeFn;
+      // },
       /**
        * Register custom functions to be included
        * @param {string} name
@@ -192,13 +192,13 @@
        * @param {string} text
        * @return {object}
        */
-      mustacheEscapeFn(text) {
-        const formatedText = formatIfDate(text);
-        if (this.renderVarHtml) {
-          return formatedText;
-        }
-        return this.originalEscapeFn(formatedText);
-      }
+      // mustacheEscapeFn(text) {
+      //   const formatedText = formatIfDate(text);
+      //   if (this.renderVarHtml) {
+      //     return formatedText;
+      //   }
+      //   return this.originalEscapeFn(formatedText);
+      // }
     },
     watch: { 
         "value": function(newVal, oldVal) { // watch it
