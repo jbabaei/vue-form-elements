@@ -13,7 +13,7 @@
       <input type="hidden" :value="JSON.stringify(value)"> -->
       
       <div class="grid-cnt">
-        <table id="grid-element" class="display"></table>
+        <table :id="`grid-element_${name}`" class="display"></table>
       </div>
       <div
         v-if="(validator && validator.errorCount) || error"
@@ -41,6 +41,7 @@
   // import { formatIfDate } from "../dateUtils";
   import DataTable from 'datatables.net-dt';
   import 'datatables.net-select';
+import { name } from "mustache";
 
   // Create the mixin
   const uniqIdsMixin = createUniqIdsMixin();
