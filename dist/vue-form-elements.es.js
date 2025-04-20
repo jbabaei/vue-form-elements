@@ -65896,7 +65896,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
     };
   },
   mounted() {
-    this.value !== void 0 && this.value !== null && (this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element", {
+    this.value !== void 0 && this.value !== null && (this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element_" + this.name, {
       data: eval(this.value),
       //eval(newVal), //JSON.parse(newVal),
       columns: eval(this.column),
@@ -65908,7 +65908,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
       searching: this.isSearchEnable,
       paging: this.isPaginationEnable,
       pageLength: this.pageSize
-    }) : new DataTable("#grid-element", {
+    }) : new DataTable("#grid-element_" + this.name, {
       data: eval(this.value).data,
       //eval(newVal), //JSON.parse(newVal),
       columns: eval(this.value).columns,
@@ -65983,8 +65983,8 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
   watch: {
     value: function(newVal, oldVal) {
       if (this.column !== void 0 && this.column.length > 0) {
-        var table = new DataTable("#grid-element");
-        table.destroy(), $("#grid-element").empty(), new DataTable("#grid-element", {
+        var table = new DataTable("#grid-element_" + this.name);
+        table.destroy(), $("#grid-element_" + this.name).empty(), new DataTable("#grid-element_" + this.name, {
           data: eval(newVal),
           //eval(newVal), //JSON.parse(newVal),
           columns: eval(this.column),
@@ -66001,8 +66001,8 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           }
         });
       } else {
-        var table = new DataTable("#grid-element");
-        table.destroy(), $("#grid-element").empty(), new DataTable("#grid-element", {
+        var table = new DataTable("#grid-element_" + this.name);
+        table.destroy(), $("#grid-element_" + this.name).empty(), new DataTable("#grid-element_" + this.name, {
           data: eval(newVal).data,
           //eval(newVal), //JSON.parse(newVal),
           columns: eval(newVal).columns,
@@ -66022,8 +66022,8 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
     },
     column: function(newVal, oldVal) {
       if (newVal !== void 0 && newVal.length > 0) {
-        var table = new DataTable("#grid-element");
-        table.destroy(), $("#grid-element").empty(), new DataTable("#grid-element", {
+        var table = new DataTable("#grid-element_" + this.name);
+        table.destroy(), $("#grid-element_" + this.name).empty(), new DataTable("#grid-element_" + this.name, {
           data: eval(this.value),
           //eval(newVal), //JSON.parse(newVal),
           columns: eval(newVal),
@@ -66040,8 +66040,8 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           }
         });
       } else {
-        var table = new DataTable("#grid-element");
-        table.destroy(), $("#grid-element").empty(), new DataTable("#grid-element", {
+        var table = new DataTable("#grid-element_" + this.name);
+        table.destroy(), $("#grid-element_" + this.name).empty(), new DataTable("#grid-element_" + this.name, {
           data: eval(newVal).data,
           //eval(newVal), //JSON.parse(newVal),
           columns: eval(newVal).columns,

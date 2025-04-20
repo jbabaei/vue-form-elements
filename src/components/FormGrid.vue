@@ -89,7 +89,7 @@
           
           if(this.value !== undefined && this.value !== null){
             if(this.column !== undefined && this.column.length > 0){
-              var ddd=new DataTable('#grid-element', {
+              var ddd=new DataTable('#grid-element_' + this.name, {
                         data: eval(this.value),//eval(newVal), //JSON.parse(newVal),
                         columns: eval(this.column),
                         responsive: true,
@@ -102,9 +102,9 @@
                         pageLength:this.pageSize
                     });
             }else{
-              //var ddd=new DataTable('#grid-element', this.value);//eval(newVal));
+              //var ddd=new DataTable('#grid-element_' + this.name, this.value);//eval(newVal));
               
-              var ddd=new DataTable('#grid-element', {
+              var ddd=new DataTable('#grid-element_' + this.name, {
                         data: eval(this.value).data,//eval(newVal), //JSON.parse(newVal),
                         columns: eval(this.value).columns,
                         responsive: true,
@@ -207,11 +207,11 @@
           // console.log('column value---',this.column);
 
           if(this.column !== undefined && this.column.length > 0){
-            var table = new DataTable('#grid-element');
+            var table = new DataTable('#grid-element_' + this.name);
             table.destroy();
-            $('#grid-element').empty();
+            $('#grid-element_' + this.name).empty();
 
-            var ddd=new DataTable('#grid-element', {
+            var ddd=new DataTable('#grid-element_' + this.name, {
                       data: eval(newVal),//eval(newVal), //JSON.parse(newVal),
                       columns: eval(this.column),
                       responsive: true,
@@ -227,12 +227,12 @@
                       }
                   });
           }else{
-            var table = new DataTable('#grid-element');
+            var table = new DataTable('#grid-element_' + this.name);
             table.destroy();
-            $('#grid-element').empty();
+            $('#grid-element_' + this.name).empty();
 
-            //var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
-            var ddd=new DataTable('#grid-element', {
+            //var ddd=new DataTable('#grid-element_' + this.name, newVal);//eval(newVal));
+            var ddd=new DataTable('#grid-element_' + this.name, {
                       data: eval(newVal).data,//eval(newVal), //JSON.parse(newVal),
                       columns: eval(newVal).columns,
                       responsive: true,
@@ -257,11 +257,11 @@
           // console.log("+++ Value:",this.value);
 
           if(newVal !== undefined && newVal.length > 0){
-            var table = new DataTable('#grid-element');
+            var table = new DataTable('#grid-element_' + this.name);
             table.destroy();
-            $('#grid-element').empty();
+            $('#grid-element_' + this.name).empty();
 
-            var ddd=new DataTable('#grid-element', {
+            var ddd=new DataTable('#grid-element_' + this.name, {
                       data: eval(this.value),//eval(newVal), //JSON.parse(newVal),
                       columns: eval(newVal),
                       responsive: true,
@@ -277,12 +277,12 @@
                       }
                   });
           }else{
-            //var ddd=new DataTable('#grid-element', newVal);//eval(newVal));
-            var table = new DataTable('#grid-element');
+            //var ddd=new DataTable('#grid-element_' + this.name, newVal);//eval(newVal));
+            var table = new DataTable('#grid-element_' + this.name);
             table.destroy();
-            $('#grid-element').empty();
+            $('#grid-element_' + this.name).empty();
 
-            var ddd=new DataTable('#grid-element', {
+            var ddd=new DataTable('#grid-element_' + this.name, {
                       data: eval(newVal).data,//eval(newVal), //JSON.parse(newVal),
                       columns: eval(newVal).columns,
                       responsive: true,
@@ -300,7 +300,7 @@
           }
 
 
-          // var ddd=new DataTable('#grid-element', {
+          // var ddd=new DataTable('#grid-element_' + this.name, {
           //           data: eval(this.value), //this.value,//eval(this.content), //JSON.parse(this.value),
           //           columns: eval(newVal),
           //           responsive: true,
