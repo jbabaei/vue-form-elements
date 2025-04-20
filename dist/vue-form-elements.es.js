@@ -65896,7 +65896,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
     };
   },
   mounted() {
-    this.value !== void 0 && this.value !== null && (this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element_" + this.name, {
+    console.log("this.name:" + this.name + "-------------this.isSearchEnable:" + this.isSearchEnable + "-----------------------this.isPaginationEnable:" + this.isPaginationEnable + "--------------------this.pageSize:" + this.pageSize), this.value !== void 0 && this.value !== null && (this.column !== void 0 && this.column.length > 0 ? new DataTable("#grid-element_" + this.name, {
       data: eval(this.value),
       //eval(newVal), //JSON.parse(newVal),
       columns: eval(this.column),
@@ -65982,7 +65982,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
   },
   watch: {
     value: function(newVal, oldVal) {
-      if (this.column !== void 0 && this.column.length > 0) {
+      if (console.log("watch--this.name:" + this.name + "-------------this.isSearchEnable:" + this.isSearchEnable + "-----------------------this.isPaginationEnable:" + this.isPaginationEnable + "--------------------this.pageSize:" + this.pageSize), this.column !== void 0 && this.column.length > 0) {
         var table = new DataTable("#grid-element_" + this.name);
         table.destroy(), $("#grid-element_" + this.name).empty(), new DataTable("#grid-element_" + this.name, {
           data: eval(newVal),
@@ -66063,7 +66063,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
 };
 var _sfc_render$5 = function f() {
   var c = this, h = c._self._c;
-  return h("div", { staticClass: "form-group" }, [h("div", { class: c.classList }, [h("div", { attrs: { id: c.uniqIdsMixin } })]), h("div", { staticClass: "grid-cnt" }, [h("table", { staticClass: "display", attrs: { id: `grid-element_${c.name}` } })]), c.validator && c.validator.errorCount || c.error ? h("div", { staticClass: "invalid-feedback" }, [c._l(c.validator.errors.get(this.name), function(y, k) {
+  return h("div", { staticClass: "form-group" }, [h("div", { class: c.classList }, [h("div", { attrs: { id: c.uniqIdsMixin } })]), h("div", { staticClass: "grid-cnt" }, [h("table", { staticClass: "display", attrs: { id: "grid-element_" + c.name } })]), c.validator && c.validator.errorCount || c.error ? h("div", { staticClass: "invalid-feedback" }, [c._l(c.validator.errors.get(this.name), function(y, k) {
     return h("div", { key: k }, [c._v(" " + c._s(y) + " ")]);
   }), c.error ? h("div", [c._v(c._s(c.error))]) : c._e()], 2) : c._e(), c.helper ? h("small", { staticClass: "form-text text-muted" }, [c._v(c._s(c.helper))]) : c._e()]);
 }, _sfc_staticRenderFns$5 = [], __component__$5 = /* @__PURE__ */ normalizeComponent(

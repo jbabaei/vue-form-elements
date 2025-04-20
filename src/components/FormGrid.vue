@@ -13,7 +13,7 @@
       <input type="hidden" :value="JSON.stringify(value)"> -->
       
       <div class="grid-cnt">
-        <table :id="`grid-element_${name}`" class="display"></table>
+        <table :id="'grid-element_'+ name" class="display"></table>
       </div>
       <div
         v-if="(validator && validator.errorCount) || error"
@@ -32,7 +32,7 @@
   </template>
   
   <script>
-  import { createUniqIdsMixin } from "vue-uniq-ids";
+  import { createUniqIdsMixin } from 'vue-uniq-ids'
   import DataFormatMixin from './mixins/DataFormat';
   import OptionboxView from "./FormSelectList/OptionboxView";
   import Mustache from "mustache";
@@ -88,6 +88,8 @@ import { name } from "mustache";
     mounted(){
         //console.log("formGrid rendered--------------",this.value);
           
+        console.log("this.name:"+this.name +"-------------this.isSearchEnable:"+this.isSearchEnable+"-----------------------this.isPaginationEnable:"+this.isPaginationEnable+"--------------------this.pageSize:"+this.pageSize)
+
           if(this.value !== undefined && this.value !== null){
             if(this.column !== undefined && this.column.length > 0){
               var ddd=new DataTable('#grid-element_' + this.name, {
@@ -204,6 +206,8 @@ import { name } from "mustache";
     watch: { 
         "value": function(newVal, oldVal) { // watch it
           // console.log('Prop changed: ', newVal, ' | was: ', oldVal);
+
+          console.log("watch--this.name:"+this.name +"-------------this.isSearchEnable:"+this.isSearchEnable+"-----------------------this.isPaginationEnable:"+this.isPaginationEnable+"--------------------this.pageSize:"+this.pageSize)
 
           // console.log('column value---',this.column);
 
