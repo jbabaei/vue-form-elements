@@ -65,7 +65,8 @@ import { name } from "mustache";
       "pageSize",
       "validationData",
       "label",
-      "renderVarHtml"
+      "renderVarHtml",
+      "footerCallback"
     ],
     data() {
       return {
@@ -102,7 +103,8 @@ import { name } from "mustache";
                         select :"multi",
                         searching: this.isSearchEnable,
                         paging: this.isPaginationEnable,
-                        pageLength:this.pageSize
+                        pageLength:this.pageSize,
+                        footerCallback:eval(this.footerCallback)
                     });
             }else{
               //var ddd=new DataTable('#grid-element_' + this.name, this.value);//eval(newVal));
@@ -117,7 +119,8 @@ import { name } from "mustache";
                         select :"multi",
                         searching: this.isSearchEnable,
                         paging: this.isPaginationEnable,
-                        pageLength:this.pageSize
+                        pageLength:this.pageSize,
+                        footerCallback:eval(this.footerCallback)
                     });//eval(newVal));
             }
           }
@@ -227,9 +230,10 @@ import { name } from "mustache";
                       searching: this.isSearchEnable,
                       paging: this.isPaginationEnable,
                       pageLength:this.pageSize,
+                      footerCallback:eval(this.footerCallback),
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
-                      }
+                      },
                   });
           }else{
             var table = new DataTable('#grid-element_' + this.name);
@@ -248,6 +252,7 @@ import { name } from "mustache";
                       searching: this.isSearchEnable,
                       paging: this.isPaginationEnable,
                       pageLength:this.pageSize,
+                      footerCallback:eval(this.footerCallback),
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
                       }
@@ -277,6 +282,7 @@ import { name } from "mustache";
                       searching: this.isSearchEnable,
                       paging: this.isPaginationEnable,
                       pageLength:this.pageSize,
+                      footerCallback:eval(this.footerCallback),
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
                       }
@@ -298,6 +304,7 @@ import { name } from "mustache";
                       searching: this.isSearchEnable,
                       paging: this.isPaginationEnable,
                       pageLength:this.pageSize,
+                      footerCallback:eval(this.footerCallback),
                       formatNumber: function (toFormat) {
                                     return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
                       }
