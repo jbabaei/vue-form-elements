@@ -65875,7 +65875,8 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
     "pageSize",
     "validationData",
     "label",
-    "renderVarHtml"
+    "renderVarHtml",
+    "footerCallback"
   ],
   data() {
     return {
@@ -65907,7 +65908,8 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
       select: "multi",
       searching: this.isSearchEnable,
       paging: this.isPaginationEnable,
-      pageLength: this.pageSize
+      pageLength: this.pageSize,
+      footerCallback: eval(this.footerCallback)
     }) : new DataTable("#grid-element_" + this.name, {
       data: eval(this.value).data,
       //eval(newVal), //JSON.parse(newVal),
@@ -65919,7 +65921,8 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
       select: "multi",
       searching: this.isSearchEnable,
       paging: this.isPaginationEnable,
-      pageLength: this.pageSize
+      pageLength: this.pageSize,
+      footerCallback: eval(this.footerCallback)
     }));
   },
   computed: {
@@ -65996,6 +65999,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           searching: this.isSearchEnable,
           paging: this.isPaginationEnable,
           pageLength: this.pageSize,
+          footerCallback: eval(this.footerCallback),
           formatNumber: function(f) {
             return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
           }
@@ -66014,6 +66018,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           searching: this.isSearchEnable,
           paging: this.isPaginationEnable,
           pageLength: this.pageSize,
+          footerCallback: eval(this.footerCallback),
           formatNumber: function(f) {
             return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
           }
@@ -66035,6 +66040,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           searching: this.isSearchEnable,
           paging: this.isPaginationEnable,
           pageLength: this.pageSize,
+          footerCallback: eval(this.footerCallback),
           formatNumber: function(f) {
             return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
           }
@@ -66053,6 +66059,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", FormGrid_vue_vue_type_style
           searching: this.isSearchEnable,
           paging: this.isPaginationEnable,
           pageLength: this.pageSize,
+          footerCallback: eval(this.footerCallback),
           formatNumber: function(f) {
             return f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
           }
