@@ -1,16 +1,8 @@
 <template>
     <div class="form-group">
-      <!-- <label :class="labelClass" v-uni-for="name">{{ $t(label) }}</label> -->
-
       <div :class="classList">
         <div :id="uniqIdsMixin" ></div>
       </div>
-      
-      <!-- Data
-      <div v-html="content"></div>
-
-      
-      <input type="hidden" :value="JSON.stringify(value)"> -->
       
       <div class="grid-cnt">
         <table :id="'grid-element_'+ name" class="display"></table>
@@ -31,16 +23,14 @@
     </div>
   </template>
   
-  <script>
-  import { createUniqIdsMixin } from 'vue-uniq-ids'
-  import DataFormatMixin from './mixins/DataFormat';
-  import OptionboxView from "./FormSelectList/OptionboxView";
-  import Mustache from "mustache";
-  import ValidationMixin from "./mixins/validation";
-//   import Editor from "./Editor";
-  // import { formatIfDate } from "../dateUtils";
-  import DataTable from 'datatables.net-dt';
-  import 'datatables.net-select';
+<script>
+import { createUniqIdsMixin } from 'vue-uniq-ids'
+import DataFormatMixin from './mixins/DataFormat';
+import OptionboxView from "./FormSelectList/OptionboxView";
+import Mustache from "mustache";
+import ValidationMixin from "./mixins/validation";
+import DataTable from 'datatables.net-dt';
+import 'datatables.net-select';
 import { name } from "mustache";
 
   // Create the mixin
@@ -72,59 +62,26 @@ import { name } from "mustache";
       return {
         counter:255555,
         originalEscapeFn: null,
-        customFunctions: {},
-        //editorSettings: {
-        //  inline: true,
-        //  menubar: false,
-        //  plugins: ["link", "lists"],
-        //  toolbar: `undo redo | link | styleselect | bold italic forecolor |
-        //      alignleft aligncenter alignright alignjustify | bullist numlist outdent indent`,
-        //   skin: false,
-        //   relative_urls: false,
-        //   convert_urls: false,
-        //   remove_script_host: false
-        // }
+        customFunctions: {}
       };
     },
     mounted(){
-        //console.log("formGrid rendered--------------",this.value);
-          
-        console.log("this.name:"+this.name +"-------------this.isSearchEnable:"+this.isSearchEnable+"-----------------------this.isPaginationEnable:"+this.isPaginationEnable+"--------------------this.pageSize:"+this.pageSize)
+        var data;
+        var columns;
 
-          if(this.value !== undefined && this.value !== null){
-            if(this.column !== undefined && this.column.length > 0){
-              var ddd=new DataTable('#grid-element_' + this.name, {
-                        data: eval(this.value),//eval(newVal), //JSON.parse(newVal),
-                        columns: eval(this.column),
-                        responsive: true,
-                        destroy:true,
-                        orderMulti:true,
-                        scrollX: true,
-                        select :"multi",
-                        searching: this.isSearchEnable,
-                        paging: this.isPaginationEnable,
-                        pageLength:this.pageSize,
-                        footerCallback:eval(this.footerCallback)
-                    });
-            }else{
-              //var ddd=new DataTable('#grid-element_' + this.name, this.value);//eval(newVal));
-              
-              var ddd=new DataTable('#grid-element_' + this.name, {
-                        data: eval(this.value).data,//eval(newVal), //JSON.parse(newVal),
-                        columns: eval(this.value).columns,
-                        responsive: true,
-                        destroy:true,
-                        orderMulti:true,
-                        scrollX: true,
-                        select :"multi",
-                        searching: this.isSearchEnable,
-                        paging: this.isPaginationEnable,
-                        pageLength:this.pageSize,
-                        footerCallback:eval(this.footerCallback)
-                    });//eval(newVal));
-            }
+        if(this.value !== undefined && this.value !== null){
+          if(this.column !== undefined && this.column.length > 0){
+            data=eval(this.value);
+            columns=eval(this.column);
+            
+          }else{
+            data=eval(this.value).data;
+            columns=eval(this.value).columns;
           }
-      },
+        }
+
+        this.generateGrid(data,columns);              
+    },
     computed: {
       classList() {
         const classList = {
@@ -173,169 +130,95 @@ import { name } from "mustache";
       }
     },
     methods: {
-      // generateGrid(){
-      //   alert("generate...")
+      generateGrid(inputData,inputColumns){
+        // console.log("this.name:"+this.name +"-------------this.isSearchEnable:"+this.isSearchEnable+"-----------------------this.isPaginationEnable:"+this.isPaginationEnable+"--------------------this.pageSize:"+this.pageSize+"-----------------------------this.footerCallback:"+this.footerCallback+"-----------------data:"+inputData+"---------------------columns:"+inputColumns)
+        
+        var table = new DataTable('#grid-element_' + this.name);
+        table.destroy();
+        $('#grid-element_' + this.name).empty();
 
-      //   var ddd=new DataTable('.grid-element', JSON.parse(this.content));
-      // },
-      /**
-       * Backup and overwrite the original mustache escaped property
-       */
-      // overwriteMustacheEscape() {
-      //   this.originalEscapeFn = Mustache.escape;
-      //   // Mustache.escape = this.mustacheEscapeFn;
-      // },
-      /**
-       * Register custom functions to be included
-       * @param {string} name
-       * @param {object} implementation
-       */
+
+        if(this.footerCallback !== undefined && this.footerCallback.length > 0){
+            var table = document.querySelector('#grid-element_' + this.name);
+            if (!table.querySelector('tfoot')) {
+              var tfoot = document.createElement('tfoot');
+              var tr = document.createElement('tr');
+
+              // Number of columns = length of your dynamic columns array
+              var colCount = inputColumns.length;
+
+              // Create empty footer cells matching columns
+              for (var i = 0; i < colCount; i++) {
+                  var th = document.createElement('th');
+                  tr.appendChild(th);
+              }
+
+              tfoot.appendChild(tr);
+              table.appendChild(tfoot);
+            }
+        }
+
+
+        var ddd=new DataTable('#grid-element_' + this.name, {
+                      data: inputData,//eval(newVal), //JSON.parse(newVal),
+                      columns: inputColumns,
+                      responsive: true,
+                      destroy:true,
+                      orderMulti:true,
+                      scrollX: true,
+                      select :"multi",
+                      searching: this.isSearchEnable ?? false,
+                      paging: this.isPaginationEnable ?? false,
+                      pageLength:this.pageSize ?? 20,
+                      footerCallback:eval('(' + this.footerCallback + ')')
+                  });        
+        
+      },
       registerCustomFunction(name, implementation) {
         this.customFunctions[name] = implementation;
       },
-      /**
-       * Escape the mustache code, added in the tinyMCE editor
-       * @param {string} text
-       * @return {object}
-       */
-      // mustacheEscapeFn(text) {
-      //   const formatedText = formatIfDate(text);
-      //   if (this.renderVarHtml) {
-      //     return formatedText;
-      //   }
-      //   return this.originalEscapeFn(formatedText);
-      // }
     },
     watch: { 
         "value": function(newVal, oldVal) { // watch it
-          // console.log('Prop changed: ', newVal, ' | was: ', oldVal);
 
-          console.log("watch--this.name:"+this.name +"-------------this.isSearchEnable:"+this.isSearchEnable+"-----------------------this.isPaginationEnable:"+this.isPaginationEnable+"--------------------this.pageSize:"+this.pageSize)
+            var data;
+            var columns;
 
-          // console.log('column value---',this.column);
+            
+            if(this.column !== undefined && this.column.length > 0){
+              data=eval(newVal);
+              columns=eval(this.column);
+              
+            }else{
+              data=eval(newVal).data;
+              columns=eval(newVal).columns;
+            }
+          
 
-          if(this.column !== undefined && this.column.length > 0){
-            var table = new DataTable('#grid-element_' + this.name);
-            table.destroy();
-            $('#grid-element_' + this.name).empty();
-
-            var ddd=new DataTable('#grid-element_' + this.name, {
-                      data: eval(newVal),//eval(newVal), //JSON.parse(newVal),
-                      columns: eval(this.column),
-                      responsive: true,
-                      destroy:true,
-                      orderMulti:true,
-                      scrollX: true,
-                      select :"multi",
-                      searching: this.isSearchEnable,
-                      paging: this.isPaginationEnable,
-                      pageLength:this.pageSize,
-                      footerCallback:eval(this.footerCallback),
-                      formatNumber: function (toFormat) {
-                                    return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
-                      },
-                  });
-          }else{
-            var table = new DataTable('#grid-element_' + this.name);
-            table.destroy();
-            $('#grid-element_' + this.name).empty();
-
-            //var ddd=new DataTable('#grid-element_' + this.name, newVal);//eval(newVal));
-            var ddd=new DataTable('#grid-element_' + this.name, {
-                      data: eval(newVal).data,//eval(newVal), //JSON.parse(newVal),
-                      columns: eval(newVal).columns,
-                      responsive: true,
-                      destroy:true,
-                      orderMulti:true,
-                      scrollX: true,
-                      select :"multi",
-                      searching: this.isSearchEnable,
-                      paging: this.isPaginationEnable,
-                      pageLength:this.pageSize,
-                      footerCallback:eval(this.footerCallback),
-                      formatNumber: function (toFormat) {
-                                    return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
-                      }
-                  });
-          }
-
-          // console.log("dataTable -----",ddd);
+            this.generateGrid(data,columns);
         },
         "column": function(newVal, oldVal) { // watch it
-          // console.log('Column Prop changed: ', newVal, ' | was: ', oldVal);
+          
+          var data;
+            var columns;
 
-          // console.log("+++ Value:",this.value);
+            
+            if(newVal !== undefined && newVal.length > 0){
+              data=eval(this.value);
+              columns=eval(newVal);
+              
+            }else{
+              data=eval(newVal).data;
+              columns=eval(newVal).columns;
+            }
+          
 
-          if(newVal !== undefined && newVal.length > 0){
-            var table = new DataTable('#grid-element_' + this.name);
-            table.destroy();
-            $('#grid-element_' + this.name).empty();
-
-            var ddd=new DataTable('#grid-element_' + this.name, {
-                      data: eval(this.value),//eval(newVal), //JSON.parse(newVal),
-                      columns: eval(newVal),
-                      responsive: true,
-                      destroy:true,
-                      orderMulti:true,
-                      scrollX: true,
-                      select :"multi",
-                      searching: this.isSearchEnable,
-                      paging: this.isPaginationEnable,
-                      pageLength:this.pageSize,
-                      footerCallback:eval(this.footerCallback),
-                      formatNumber: function (toFormat) {
-                                    return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
-                      }
-                  });
-          }else{
-            //var ddd=new DataTable('#grid-element_' + this.name, newVal);//eval(newVal));
-            var table = new DataTable('#grid-element_' + this.name);
-            table.destroy();
-            $('#grid-element_' + this.name).empty();
-
-            var ddd=new DataTable('#grid-element_' + this.name, {
-                      data: eval(newVal).data,//eval(newVal), //JSON.parse(newVal),
-                      columns: eval(newVal).columns,
-                      responsive: true,
-                      destroy:true,
-                      orderMulti:true,
-                      scrollX: true,
-                      select :"multi",
-                      searching: this.isSearchEnable,
-                      paging: this.isPaginationEnable,
-                      pageLength:this.pageSize,
-                      footerCallback:eval(this.footerCallback),
-                      formatNumber: function (toFormat) {
-                                    return toFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
-                      }
-                  });//eval(newVal));
-          }
-
-
-          // var ddd=new DataTable('#grid-element_' + this.name, {
-          //           data: eval(this.value), //this.value,//eval(this.content), //JSON.parse(this.value),
-          //           columns: eval(newVal),
-          //           responsive: true,
-          //           destroy:true,
-          //           orderMulti:true
-          //       });
-
-                // console.log("dataTable -----",ddd);
+            this.generateGrid(data,columns);
         }
     }
   };
   </script>
-  
-  <style>
-  /* .invalid-feedback {
-    display: block;
-  }
-  
-  .is-invalid {
-    border: 1px solid #dc3545;
-    border-radius: 0.25rem;
-  } */
-  </style>
+
   
 
 <style lang="scss">
