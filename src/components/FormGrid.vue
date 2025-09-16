@@ -166,7 +166,7 @@ import { name } from "mustache";
                       destroy:true,
                       orderMulti:true,
                       scrollX: true,
-                      select :"multi",
+                      //select :"multi",
                       searching: this.isSearchEnable ?? false,
                       paging: this.isPaginationEnable ?? false,
                       pageLength:this.pageSize ?? 20,

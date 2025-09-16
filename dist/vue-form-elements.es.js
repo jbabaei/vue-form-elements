@@ -65916,7 +65916,6 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", uniqIdsMixin$3 = createMixi
   },
   methods: {
     generateGrid(inputData, inputColumns) {
-      console.log("this.name:" + this.name + "-------------this.isSearchEnable:" + this.isSearchEnable + "-----------------------this.isPaginationEnable:" + this.isPaginationEnable + "--------------------this.pageSize:" + this.pageSize + "-----------------------------this.footerCallback:" + this.footerCallback + "-----------------data:" + inputData + "---------------------columns:" + inputColumns);
       var table = new DataTable("#grid-element_" + this.name);
       if (table.destroy(), $("#grid-element_" + this.name).empty(), this.footerCallback !== void 0 && this.footerCallback.length > 0) {
         var table = document.querySelector("#grid-element_" + this.name);
@@ -65936,7 +65935,7 @@ const FormGrid_vue_vue_type_style_index_0_lang = "", uniqIdsMixin$3 = createMixi
         destroy: !0,
         orderMulti: !0,
         scrollX: !0,
-        select: "multi",
+        //select :"multi",
         searching: this.isSearchEnable ?? !1,
         paging: this.isPaginationEnable ?? !1,
         pageLength: this.pageSize ?? 20,
